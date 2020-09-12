@@ -16,7 +16,7 @@ spell_checker <- function(texts){
   result <- httr::GET(base_url,
                       query = list(`_callback`='window._jindo2._spellingCheck_0',
                                    q = texts),
-                      add_headers(`user-agent`='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                      httr::add_headers(`user-agent`='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
                                   referer = 'https://search.naver.com/'),
                       encode = 'UTF-8')
 
